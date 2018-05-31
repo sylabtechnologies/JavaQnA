@@ -2,6 +2,8 @@
 /** Q: What is the sum of the first 123456 prime numbers? */
 /** A: use simple primality test */
 
+import java.util.*;
+
 public class Primesum {
 
     public static void main(String[] args) {
