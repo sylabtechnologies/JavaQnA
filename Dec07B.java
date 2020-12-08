@@ -10,9 +10,11 @@ import java.util.Random;
 
 public class Dec07B
 {
+    private final static int MAXNUM = 100;
+    
     public static void info()
     {
-        System.out.println("Guess the number between 1 and 1000:");
+        System.out.println("Guess the number between 1 and " + MAXNUM + ":");
         System.out.println("");
     }    
     
@@ -21,29 +23,35 @@ public class Dec07B
         info();
         
         Random rand = new Random();
-        int mustguess = rand.nextInt(1000) + 1;
+        int mustguess = rand.nextInt(MAXNUM) + 1;
 
         Scanner input = new Scanner(System.in);
-        int guess = 0;
+        int guess = 0, cnt = 0;
+        boolean found = false;
 
-        while(true)
+        while(!found && cnt < 5)
         {
             System.out.print("Your guess? ");
             guess = input.nextInt();
             
-            if (Math.abs(guess - mustguess) <= 100)
-                break;
-            else if(guess > mustguess)
+            if (Math.abs(guess - mustguess) <= 10)
             {
+                found = true;
+                continue;
+            }
+            
+            cnt++;
+            if(guess > mustguess)
                 System.out.println("It\'s lower.");
-            }
             else
-            {
                 System.out.println("It\'s higher.");
-            }
         }
 
-        System.out.println("Nice job!");
-        System.out.println("Your number is: " + mustguess);
+        if (found)
+            System.out.print("Nice job! ");
+        else
+            System.out.println("Sorry!");
+            
+        System.out.print("Your number is: " + mustguess);
     }
 }
