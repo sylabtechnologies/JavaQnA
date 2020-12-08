@@ -69,12 +69,12 @@ public class Dec07A
         
         Triangle tr2 = new Triangle();
         prepare(3, tr, 0, 0);
-        prepare(3, tr2, 0, 5);
+        prepare(3, tr2, 0, 4);
 
         tr.flipHoriz();
         tr2.flipHoriz();
         prepare(4, tr, 0, 0);
-        prepare(4, tr2, 0, 5);
+        prepare(4, tr2, 0, 4);
 
         for (ArrayList<String> lst : mybuf)
         {
@@ -114,7 +114,7 @@ public class Dec07A
                 cur.add(prn);
             }
 
-            char temp[] = new char[9];
+            char temp[] = new char[10];
             Arrays.fill(temp, '-');
             cur.add(new String(temp));
             
@@ -125,19 +125,18 @@ public class Dec07A
         {
             for (int i = 1; i < 6; i++)
             {
+                String cur = mybuf.get(row-1).get(i);
                 ArrayList<Character> temp = new ArrayList<>();
-                char[] trRow = tr.arr[i-1];
-                for (char c : trRow)
+                for (char c : cur.toCharArray())
                     temp.add(c);
                 
+                char[] trRow = tr.arr[i-1];
                 for (int j = temp.size(); j < x + trRow.length; j++)
                     temp.add(' ');
- 
-                for (int j = 0; j < trRow.length; j++)
-                {
-                    temp.set(x + j, trRow[j]);
-                }
                 
+                for (int j = x; j < x + trRow.length; j++)
+                    temp.set(j, trRow[j-x]);
+ 
                 StringBuilder sb = new StringBuilder();
                 for (Character ch : temp) sb.append(ch);
                 mybuf.get(row - 1).set(i, sb.toString());
