@@ -128,26 +128,25 @@ public class Dec07A
             
             mybuf.add(cur);
         }
-        // prep replace
+        // prep override
         else if (row == mybuf.size())
         {
             for (int i = 1; i < tr.getSize() + 1; i++)
             {
                 String cur = mybuf.get(row-1).get(i);
-                ArrayList<Character> temp = new ArrayList<>();
-                for (char c : cur.toCharArray())
-                    temp.add(c);
                 
                 char[] trRow = tr.arr[i-1];
-                for (int j = temp.size(); j < xstart + trRow.length; j++)
-                    temp.add(' ');
+                char temp[] = new char[Math.max(cur.length(), xstart + trRow.length)];
+                Arrays.fill(temp, ' ');
+                
+                int ix = 0;
+                for (char c : cur.toCharArray())
+                    temp[ix++] = c;
                 
                 for (int j = xstart; j < xstart + trRow.length; j++)
-                    temp.set(j, trRow[j-xstart]);
+                    temp[j] = trRow[j - xstart];
  
-                StringBuilder sb = new StringBuilder();
-                for (Character ch : temp) sb.append(ch);
-                mybuf.get(row - 1).set(i, sb.toString());
+                mybuf.get(row - 1).set(i, new String(temp));
             }
         }
         else
