@@ -20,10 +20,10 @@ admin can add/delete flights or cancel a flight and refund all tickets
 Backend Microservices
 
 Flight list/update service
-1. list all flights 
-2. list all flights from A to B
-3. decrement flight capacity
-3. increment flight capacity
+1. list all flights                 flight/all
+2. list all flights from A to B     flight/{date}/BWI/LAX
+3. decrement flight capacity        flight/{id}/decrement
+3. increment flight capacity        flight/{id}/increment
 
 User front desk service - FOLLOW THE UTOPIA FLOW
 
