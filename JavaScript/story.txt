@@ -1,0 +1,27 @@
+As a , I do, So that my goal.
+
+Let us take a look at how a user story is framed for the scenario of a Bank Customer withdrawing cash from ATM.
+
+traveler tasks:
+
+1. list available flights
+2. fill details/book flight/ w/ booking id
+2.1 buy ticket
+3. cancel ticket
+
+S1 = timer service: puts data in 60 buckets, run each 15 second
+
+S2 = booking system service
+1. get booking id, check if it is active, record cc, update all other data
+2. or cancel ticker, reverse
+
+List services: 
+
+7. REALISTICALLY SHOULD HAVE TRANSACTION LIST W/ ACCOUND IDs (service - record transaction, ok just log it)
+
+transactionID (pk) userId (fk) amount flightId
+
+admin    : add or cancel flights
+
+B. Write pseudocode
+
