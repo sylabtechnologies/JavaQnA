@@ -29,6 +29,7 @@ User front desk service - FOLLOW THE UTOPIA FLOW
 
 Bookings Service
 1. Create bookingId with flightID and bookerId and isActive
+   and call flight update service to decrement flight capacity
    INSERT INTO TBL_BOOKING (BOOKINGID, FLIGHTID, ISACTIVE, STRIPEID, BOOKERID) VALUES ( 10 , 22, TRUE,“XXX”, 44 );
 
 2. set booking to inactive
