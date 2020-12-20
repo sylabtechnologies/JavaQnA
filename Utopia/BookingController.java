@@ -1,5 +1,3 @@
-package com.smoothstack.dec2020.controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
