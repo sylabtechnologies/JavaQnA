@@ -34,7 +34,7 @@ public class BookingController {
 	@RequestMapping(path = "booking/{bookingId}", method = RequestMethod.GET)
 	public Booking get(@PathVariable int bookingId)
 	{
-		return service.getBooking(bookingId);
+		return service.get(bookingId);
 	}
 
 	@RequestMapping(path = "booking/{flightId}/{bookerId}", method = RequestMethod.POST)
@@ -57,7 +57,7 @@ public class BookingController {
 	@RequestMapping(path = "booking/pruned/{bookingId}", method = RequestMethod.PUT)
 	public void rollback(@PathVariable int bookingId)
 	{
-		Booking book = service.getBooking(bookingId);
+		Booking book = service.get(bookingId);
 
 		if (book == null)
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "cant find");
@@ -70,16 +70,16 @@ public class BookingController {
 			req.getForEntity(host + flightPort + "/" + increment + "/" + book.getFlightId(), String.class);
 
 		if (resp.getStatusCode() != HttpStatus.OK)
-			throw new ResponseStatusException(HttpStatus.FAILED_DEPENDENCY, "flight error");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "flight error");
 
 		if (!resp.getBody().equals("OK"))
-			throw new ResponseStatusException(HttpStatus.FAILED_DEPENDENCY, "flight error");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "flight error");
 	}
 
 	@RequestMapping(path = "booking/inactive/{bookingId}", method = RequestMethod.PUT)
 	public void deactivate(@PathVariable int bookingId)
 	{
-		Booking book = service.getBooking(bookingId);
+		Booking book = service.get(bookingId);
 
 		if (book == null)
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "cant find");
