@@ -1,11 +1,11 @@
+// pojo
 public class Payment {
-	int id;
+	Long id;
 	int bookerId;
 	int flightId;
 
-	public Payment(int id, int bookerId, int flightId)
+	public Payment(int bookerId, int flightId)
 	{
-		this.id = id;
 		this.bookerId = bookerId;
 		this.flightId = flightId;
 	}

@@ -1,23 +1,23 @@
+// pojo
 public class Booking {
-	int id;
+	Long id;
 	int flightId;
 	int isActive;
 	String stripeId;
 	int bookerId;
 
-	public Booking(int id, int flightId, int isActive, String stripeId, int bookerId) {
-		this.id = id;
+	public Booking(int flightId, int isActive, String stripeId, int bookerId) {
 		this.flightId = flightId;
 		this.isActive = isActive;
 		this.stripeId = stripeId;
 		this.bookerId = bookerId;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
