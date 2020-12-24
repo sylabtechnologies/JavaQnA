@@ -152,11 +152,7 @@ public class TblBooking implements Serializable {
         }
         TblBooking other = (TblBooking) object;
         if ((this.tblBookingPK == null && other.tblBookingPK != null) || (this.tblBookingPK != null && !this.tblBookingPK.equals(other.tblBookingPK))) {
-            return false;
-        }
-        return true;
-    }
-
+n
     @Override
     public String toString() {
         return "Entity.TblBooking[ tblBookingPK=" + tblBookingPK + " ]";
