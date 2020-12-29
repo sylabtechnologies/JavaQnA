@@ -1,0 +1,75 @@
+## workbench 8.02 added extra columns to AWS tlb_booking Dec24 2am
+
+C:\Users\Dennis\Desktop\tester>node dbColumns.js
+[ RowDataPacket {
+    Field: 'bookingId',
+    Type: 'int',
+    Null: 'NO',
+    Key: 'PRI',
+    Default: null,
+    Extra: '' },
+  RowDataPacket {
+    Field: 'flightId',
+    Type: 'int',
+    Null: 'NO',
+    Key: 'PRI',
+    Default: null,
+    Extra: '' },
+  RowDataPacket {
+    Field: 'isActive',
+    Type: 'tinyint',
+    Null: 'NO',
+    Key: '',
+    Default: null,
+    Extra: '' },
+  RowDataPacket {
+    Field: 'stripeId',
+    Type: 'varchar(45)',
+    Null: 'NO',
+    Key: '',
+    Default: null,
+    Extra: '' },
+  RowDataPacket {
+    Field: 'bookerId',
+    Type: 'int',
+    Null: 'NO',
+    Key: 'PRI',
+    Default: null,
+    Extra: '' },
+  RowDataPacket {
+    Field: 'booker_id',
+    Type: 'int',
+    Null: 'NO',
+    Key: '',
+    Default: null,
+    Extra: '' },
+  RowDataPacket {
+    Field: 'booking_id',
+    Type: 'int',
+    Null: 'NO',
+    Key: '',
+    Default: null,
+    Extra: '' },
+  RowDataPacket {
+    Field: 'flight_id',
+    Type: 'int',
+    Null: 'NO',
+    Key: '',
+    Default: null,
+    Extra: '' },
+  RowDataPacket {
+    Field: 'is_active',
+    Type: 'smallint',
+    Null: 'NO',
+    Key: '',
+    Default: null,
+    Extra: '' },
+  RowDataPacket {
+    Field: 'stripe_id',
+    Type: 'varchar(255)',
+    Null: 'NO',
+    Key: '',
+    Default: null,
+    Extra: '' } ]
+
+C:\Users\Dennis\Desktop\tester>
